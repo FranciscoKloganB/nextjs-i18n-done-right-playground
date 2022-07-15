@@ -1,0 +1,12 @@
+**/.gitignore
+**/coverage/
+**/mockServiceWorker.js
+.github/
+.husky/
+.next/
+.vscode/
+deploy/
+dist/
+locales/
+node_modules/
+storybook-static/

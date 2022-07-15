@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "command": "npm run dev:inspect",
+      "name": "Next: debug server-side",
+      "request": "launch",
+      "type": "node-terminal"
+    },
+    {
+      "name": "Next: debug client-side",
+      "request": "launch",
+      "type": "chrome",
+      "url": "http://localhost:3000"
+    },
+    {
+      "command": "npm run dev:inspect",
+      "name": "Next: debug full stack",
+      "request": "launch",
+      "serverReadyAction": {
+        "pattern": "started server on .+, url: (https?://.+)",
+        "uriFormat": "%s",
+        "action": "debugWithChrome"
+      },
+      "type": "node-terminal",
+    },
+  ]
+}

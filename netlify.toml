@@ -1,0 +1,8 @@
+[build.environment]
+  NODE_VERSION = "16.15"
+  # prevent Netlify from running  `npm install` when it finds `package.json`
+  NPM_FLAGS = "--version"
+
+[build]
+  command = "npm run netlify"
+  publish = ".next"
