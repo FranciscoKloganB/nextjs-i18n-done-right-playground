@@ -1,19 +1,11 @@
 module.exports = {
-  extends: ["plugin:storybook/recommended", "next", "next/core-web-vitals", "prettier"],
-  overrides: [
-    {
-      files: ["*.stories.@(ts|tsx|js|jsx|mjs|cjs)"],
-      rules: {
-        "storybook/hierarchy-separator": "error"
-      }
-    }
-  ],
+  extends: ["next", "next/core-web-vitals", "prettier"],
   plugins: ["no-only-tests"],
   rules: {
     "max-len": [
       "error",
       {
-        code: 88,
+        code: 100,
         tabWidth: 2,
         ignoreStrings: true,
         ignoreTrailingComments: true,

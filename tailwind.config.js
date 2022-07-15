@@ -18,5 +18,5 @@ module.exports = {
         ribbon: "#0047ff"
       }
     }
-  },
+  }
 }

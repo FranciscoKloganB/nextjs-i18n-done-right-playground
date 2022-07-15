@@ -30,10 +30,7 @@ declare global {
     HTMLButtonElement
   >
 
-  type ReactImageProps = DetailedHTMLProps<
-    ImgHTMLAttributes<HTMLImageElement>,
-    HTMLImageElement
-  >
+  type ReactImageProps = DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
   type ReactKeyboardEvent = KeyboardEvent
   type ReactMouseEvent = MouseEvent
   type ReactOnChangeEvent = ChangeEvent<HTMLInputElement>

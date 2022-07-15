@@ -22,7 +22,7 @@ module.exports = {
   importOrderSortSpecifiers: true,
   jsxBracketSameLine: false,
   plugins: [require("prettier-plugin-tailwindcss")],
-  printWidth: 88,
+  printWidth: 100,
   semi: false,
   singleQuote: false,
   trailingComma: "none"
