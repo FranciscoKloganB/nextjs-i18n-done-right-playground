@@ -32,3 +32,21 @@ export const NavigationOptionsStyled = tw.ul`
   md:text-sm
   md:font-medium
 `
+
+export const Button = tw.button`
+  bg-electric-green
+  inline-flex
+  items-center
+  justify-center
+  rounded-md border
+  border-transparent
+  px-4
+  py-2 
+  text-sm
+  font-medium
+  shadow-sm
+  focus:outline-none
+  focus:ring-2
+  focus:ring-offset-2
+  sm:w-auto
+`

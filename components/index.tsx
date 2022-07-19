@@ -1,2 +1,2 @@
 export * from "./styled"
-export * from "./layout/TheNavbar"
+export * from "./layout/Navbar"
