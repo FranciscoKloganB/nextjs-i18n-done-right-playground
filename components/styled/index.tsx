@@ -15,24 +15,6 @@ export const AnchorStyled = tw.a`
   md:hover:bg-transparent
 `
 
-export const NavigationOptionsContainer = tw.div`
-  hidden
-  w-full
-  md:block
-  md:w-auto
-`
-
-export const NavigationOptionsStyled = tw.ul`
-  mt-4
-  flex
-  flex-col
-  md:mt-0
-  md:flex-row
-  md:space-x-8
-  md:text-sm
-  md:font-medium
-`
-
 export const Button = tw.button`
   bg-electric-green
   inline-flex
@@ -41,7 +23,7 @@ export const Button = tw.button`
   rounded-md border
   border-transparent
   px-4
-  py-2 
+  py-2
   text-sm
   font-medium
   shadow-sm
@@ -49,4 +31,46 @@ export const Button = tw.button`
   focus:ring-2
   focus:ring-offset-2
   sm:w-auto
+`
+
+export const FooterStyled = tw.footer`
+  fixed
+  bottom-0 w-full
+  rounded-lg
+  bg-white
+  p-4 shadow
+  dark:bg-gray-800
+  md:flex
+  md:items-center
+  md:justify-between
+  md:p-6
+`
+
+export const NavbarStyled = tw.nav`
+  w-full
+  rounded
+  border-gray-200
+  bg-white
+  px-2
+  py-2.5
+  dark:bg-gray-900
+  sm:px-4
+`
+
+export const UnorderedListContainer = tw.div`
+  hidden
+  w-full
+  md:block
+  md:w-auto
+`
+
+export const UnorderedListStyled = tw.ul`
+  mt-4
+  flex
+  flex-col
+  md:mt-0
+  md:flex-row
+  md:space-x-8
+  md:text-sm
+  md:font-medium
 `

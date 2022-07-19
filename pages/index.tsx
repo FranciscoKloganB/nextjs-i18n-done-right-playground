@@ -1,12 +1,5 @@
-import { Navbar, Footer } from "~/components"
-import DefaultComponent from "~/components/DefaultComponent"
+import { InvoiceSummary } from "~/components"
 
 export default function App() {
-  return (
-    <div>
-      <Navbar />
-      <DefaultComponent />
-      <Footer />
-    </div>
-  )
+  return <InvoiceSummary />
 }

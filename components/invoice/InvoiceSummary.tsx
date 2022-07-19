@@ -8,7 +8,7 @@ const projects = [
   { id: 1, name: "New Advertising Campaign", hours: "12.0", rate: "$75.00", price: "$900.00" }
 ]
 
-export default function DefaultComponent() {
+export function InvoiceSummary() {
   const { t } = useTranslation(COMMON)
 
   return (
