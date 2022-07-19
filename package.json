@@ -15,8 +15,7 @@
     "start": "next start",
     "lint:next": "next lint",
     "lint:ts": "tsc --project tsconfig.json",
-    "lint": "next lint && tsc --project tsconfig.json",
-    "netlify": "npm ci && npm rebuild && npm run prepare --if-present && npm run build"
+    "lint": "next lint && tsc --project tsconfig.json"
   },
   "dependencies": {
     "clsx": "^1.2.1",
