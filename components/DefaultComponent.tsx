@@ -6,7 +6,7 @@ const projects = [
 
 export default function DefaultComponent() {
   return (
-    <div className="flex w-4/5 flex-col justify-center px-4 sm:px-6 lg:px-8">
+    <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-xl font-semibold text-gray-900">Invoice</h1>
