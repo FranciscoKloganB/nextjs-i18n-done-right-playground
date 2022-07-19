@@ -26,6 +26,7 @@ export const NavigationOptionsStyled = tw.ul`
   mt-4
   flex
   flex-col
+  items-center
   md:mt-0
   md:flex-row
   md:space-x-8
