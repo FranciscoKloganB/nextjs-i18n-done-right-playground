@@ -1,4 +1,9 @@
-import { AnchorStyled, UnorderedListStyled, UnorderedListContainer } from "~/components"
+import {
+  AnchorStyled,
+  UnorderedListStyled,
+  UnorderedListContainer,
+  NavbarStyled
+} from "~/components"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -16,7 +21,7 @@ function LogoContainer({ children: child }: { children: React.ReactNode }) {
 
 export function Navbar() {
   return (
-    <nav className="w-full rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
+    <NavbarStyled>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <LogoContainer>
           <Image
@@ -63,6 +68,6 @@ export function Navbar() {
           </UnorderedListStyled>
         </UnorderedListContainer>
       </div>
-    </nav>
+    </NavbarStyled>
   )
 }
