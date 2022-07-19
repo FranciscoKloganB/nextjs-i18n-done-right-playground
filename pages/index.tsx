@@ -1,9 +1,12 @@
-import { TheNavbar } from "~/components"
+import { Navbar, Footer } from "~/components"
+import DefaultComponent from "~/components/DefaultComponent"
 
 export default function App() {
   return (
     <div>
-      <TheNavbar />
+      <Navbar />
+      <DefaultComponent />
+      <Footer />
     </div>
   )
 }
