@@ -2,34 +2,11 @@ import { useTranslation } from "react-i18next"
 
 import { Button } from "~/components"
 import { COMMON } from "~/constants/translations"
+import { toHumanReadableString } from "~/utils/time"
 
 const projects = [
   { id: 1, name: "New Advertising Campaign", hours: "12.0", rate: "$75.00", price: "$900.00" }
 ]
-
-function toHumanReadableString(
-  date: string | number | Date,
-  locale: string,
-  options?: Intl.DateTimeFormatOptions
-) {
-  if (!date) {
-    throw new TypeError(`'${date}' is not a valid date`)
-  }
-
-  const convertableDate = date instanceof Date ? date : new Date(date)
-  const humanReadableDate = convertableDate.toLocaleDateString(locale, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-    ...options
-  })
-
-  if (humanReadableDate === "Invalid Date") {
-    throw new Error(`'${date}' is not a valid date`)
-  }
-
-  return humanReadableDate
-}
 
 export default function DefaultComponent() {
   const { t } = useTranslation(COMMON)
