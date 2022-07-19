@@ -1,4 +1,5 @@
-import { Button } from "~/components"
+import { Button, TableContainer, TableStyled } from "~/components"
+import { ProjectRow } from "../project/ProjectRow"
 
 const projects = [
   { id: 1, name: "New Advertising Campaign", hours: "12.0", rate: "$75.00", price: "$900.00" }
@@ -19,8 +20,8 @@ export function InvoiceSummary() {
           <Button type="button">Print</Button>
         </div>
       </div>
-      <div className="-mx-4 mt-8 flex flex-col sm:-mx-6 md:mx-0">
-        <table className="min-w-full divide-y divide-gray-300">
+      <TableContainer>
+        <TableStyled>
           <thead>
             <tr>
               <th
@@ -51,23 +52,7 @@ export function InvoiceSummary() {
           </thead>
           <tbody>
             {projects.map((project) => (
-              <tr key={project.id} className="border-b border-gray-200">
-                <td className="py-4 pl-4 pr-3 text-sm sm:pl-6 md:pl-0">
-                  <div className="font-medium text-gray-900">{project.name}</div>
-                  <div className="mt-0.5 text-gray-500 sm:hidden">
-                    {project.hours} hours at {project.rate}
-                  </div>
-                </td>
-                <td className="hidden py-4 px-3 text-right text-sm text-gray-500 sm:table-cell">
-                  {project.hours}
-                </td>
-                <td className="hidden py-4 px-3 text-right text-sm text-gray-500 sm:table-cell">
-                  {project.rate}
-                </td>
-                <td className="py-4 pl-3 pr-4 text-right text-sm text-gray-500 sm:pr-6 md:pr-0">
-                  {project.price}
-                </td>
-              </tr>
+              <ProjectRow key={project.id} project={project} />
             ))}
           </tbody>
           <tfoot>
@@ -126,8 +111,8 @@ export function InvoiceSummary() {
               </td>
             </tr>
           </tfoot>
-        </table>
-      </div>
+        </TableStyled>
+      </TableContainer>
     </div>
   )
 }

@@ -57,6 +57,27 @@ export const NavbarStyled = tw.nav`
   sm:px-4
 `
 
+export const TableContainer = tw.div`
+  w-full
+  -mx-4
+  mt-8
+  flex
+  flex-col
+  sm:-mx-6
+  md:mx-0
+`
+
+export const TableStyled = tw.table`
+  min-w-full
+  divide-y
+  divide-gray-300
+`
+
+export const TableRow = tw.tr`
+  border-b
+  border-gray-200
+`
+
 export const UnorderedListContainer = tw.div`
   hidden
   w-full
