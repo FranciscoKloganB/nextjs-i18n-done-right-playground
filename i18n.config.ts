@@ -1,13 +1,12 @@
+import * as translationConfigurations from "~/locales"
+
 import i18n from "i18next"
-import { initReactI18next } from "react-i18next"
-import getConfig from "next/config"
 import LanguageDetector from "i18next-browser-languagedetector"
 
-import * as translationConfigurations from "./locales"
-import { defaultLanguage, supportedLanguages } from "./constants/languages"
+import { initReactI18next } from "react-i18next"
+import { defaultLanguage, supportedLanguages } from "~/constants/languages"
 
-const { publicRuntimeConfig } = getConfig() || {}
-const cookieMinutes = +publicRuntimeConfig?.I18N_COOKIE_MINUTES || 5
+const cookieMinutes = 60
 
 i18n
   .use(LanguageDetector)
