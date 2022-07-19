@@ -1,5 +1,19 @@
 {
   "about": "About",
   "contact": "Contact",
-  "visit": "Visit"
+  "visit": "Visit",
+  "invoice": "Invoice",
+  "workCompleteFrom": "For work completed from",
+  "to": "to",
+  "print": "Print",
+  "project": "Project",
+  "hours": "Hours",
+  "rate": "Rate",
+  "price": "Price",
+  "subtotal": "Subtotal",
+  "tax": "Tax",
+  "total": "Total",
+  "allRightsReserved": "All Rights Reserved.",
+  "privatePolicy": "Private Policy",
+  "licensing": "Licensing"
 }

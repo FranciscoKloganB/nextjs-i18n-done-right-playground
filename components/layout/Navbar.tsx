@@ -18,7 +18,7 @@ function LogoContainer({ children: child }: { children: React.ReactNode }) {
 }
 
 export function Navbar() {
-  const { t, i18n } = useTranslation(COMMON)
+  const { t } = useTranslation(COMMON)
 
   return (
     <nav className="w-full rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">

@@ -1,22 +1,53 @@
+import { useTranslation } from "react-i18next"
+
 import { Button } from "~/components"
+import { COMMON } from "~/constants/translations"
 
 const projects = [
   { id: 1, name: "New Advertising Campaign", hours: "12.0", rate: "$75.00", price: "$900.00" }
 ]
 
+function toHumanReadableString(
+  date: string | number | Date,
+  locale: string,
+  options?: Intl.DateTimeFormatOptions
+) {
+  if (!date) {
+    throw new TypeError(`'${date}' is not a valid date`)
+  }
+
+  const convertableDate = date instanceof Date ? date : new Date(date)
+  const humanReadableDate = convertableDate.toLocaleDateString(locale, {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    ...options
+  })
+
+  if (humanReadableDate === "Invalid Date") {
+    throw new Error(`'${date}' is not a valid date`)
+  }
+
+  return humanReadableDate
+}
+
 export default function DefaultComponent() {
+  const { t } = useTranslation(COMMON)
+
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
-          <h1 className="text-xl font-semibold text-gray-900">Invoice</h1>
+          <h1 className="text-xl font-semibold text-gray-900">{t("invoice")}</h1>
           <p className="mt-2 text-sm text-gray-700">
-            For work completed from <time dateTime="2022-08-01">August 1, 2022</time> to{" "}
-            <time dateTime="2022-08-31">August 31, 2022</time>.
+            {t("workCompleteFrom")}{" "}
+            <time dateTime="2022-08-01">{toHumanReadableString("2022-08-01", "en")}</time>{" "}
+            {`${t("to")} `}
+            <time dateTime="2022-08-31">{toHumanReadableString("2022-08-01", "en")}</time>.
           </p>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
-          <Button type="button">Print</Button>
+          <Button type="button">{t("print")}</Button>
         </div>
       </div>
       <div className="-mx-4 mt-8 flex flex-col sm:-mx-6 md:mx-0">
@@ -27,25 +58,25 @@ export default function DefaultComponent() {
                 scope="col"
                 className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6 md:pl-0"
               >
-                Project
+                {t("project")}
               </th>
               <th
                 scope="col"
                 className="hidden py-3.5 px-3 text-right text-sm font-semibold text-gray-900 sm:table-cell"
               >
-                Hours
+                {t("hours")}
               </th>
               <th
                 scope="col"
                 className="hidden py-3.5 px-3 text-right text-sm font-semibold text-gray-900 sm:table-cell"
               >
-                Rate
+                {t("rate")}
               </th>
               <th
                 scope="col"
                 className="py-3.5 pl-3 pr-4 text-right text-sm font-semibold text-gray-900 sm:pr-6 md:pr-0"
               >
-                Price
+                {t("price")}
               </th>
             </tr>
           </thead>
@@ -77,13 +108,13 @@ export default function DefaultComponent() {
                 colSpan={3}
                 className="hidden pl-6 pr-3 pt-6 text-right text-sm font-normal text-gray-500 sm:table-cell md:pl-0"
               >
-                Subtotal
+                {t("subtotal")}
               </th>
               <th
                 scope="row"
                 className="pl-4 pr-3 pt-6 text-left text-sm font-normal text-gray-500 sm:hidden"
               >
-                Subtotal
+                {t("subtotal")}
               </th>
               <td className="pl-3 pr-4 pt-6 text-right text-sm text-gray-500 sm:pr-6 md:pr-0">
                 $3,900.00
@@ -95,13 +126,13 @@ export default function DefaultComponent() {
                 colSpan={3}
                 className="hidden pl-6 pr-3 pt-4 text-right text-sm font-normal text-gray-500 sm:table-cell md:pl-0"
               >
-                Tax
+                {t("tax")}
               </th>
               <th
                 scope="row"
                 className="pl-4 pr-3 pt-4 text-left text-sm font-normal text-gray-500 sm:hidden"
               >
-                Tax
+                {t("tax")}
               </th>
               <td className="pl-3 pr-4 pt-4 text-right text-sm text-gray-500 sm:pr-6 md:pr-0">
                 $585.00
@@ -113,13 +144,13 @@ export default function DefaultComponent() {
                 colSpan={3}
                 className="hidden pl-6 pr-3 pt-4 text-right text-sm font-semibold text-gray-900 sm:table-cell md:pl-0"
               >
-                Total
+                {t("total")}
               </th>
               <th
                 scope="row"
                 className="pl-4 pr-3 pt-4 text-left text-sm font-semibold text-gray-900 sm:hidden"
               >
-                Total
+                {t("total")}
               </th>
               <td className="pl-3 pr-4 pt-4 text-right text-sm font-semibold text-gray-900 sm:pr-6 md:pr-0">
                 $4,485.00
