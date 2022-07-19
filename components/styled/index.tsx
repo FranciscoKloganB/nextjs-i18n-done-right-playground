@@ -15,14 +15,27 @@ export const AnchorStyled = tw.a`
   md:hover:bg-transparent
 `
 
-export const NavigationOptionsContainer = tw.div`
+export const FooterStyled = tw.footer`
+  fixed
+  bottom-0 w-full
+  rounded-lg
+  bg-white
+  p-4 shadow
+  dark:bg-gray-800
+  md:flex
+  md:items-center
+  md:justify-between
+  md:p-6
+`
+
+export const UnorderedListContainer = tw.div`
   hidden
   w-full
   md:block
   md:w-auto
 `
 
-export const NavigationOptionsStyled = tw.ul`
+export const UnorderedListStyled = tw.ul`
   mt-4
   flex
   flex-col
@@ -41,7 +54,7 @@ export const Button = tw.button`
   rounded-md border
   border-transparent
   px-4
-  py-2 
+  py-2
   text-sm
   font-medium
   shadow-sm

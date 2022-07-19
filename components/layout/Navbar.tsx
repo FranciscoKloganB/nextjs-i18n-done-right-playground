@@ -1,4 +1,4 @@
-import { AnchorStyled, NavigationOptionsStyled, NavigationOptionsContainer } from "~/components"
+import { AnchorStyled, UnorderedListStyled, UnorderedListContainer } from "~/components"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -49,8 +49,8 @@ export function Navbar() {
             ></path>
           </svg>
         </button>
-        <NavigationOptionsContainer id="navbar-default">
-          <NavigationOptionsStyled>
+        <UnorderedListContainer id="navbar-default">
+          <UnorderedListStyled>
             <li>
               <AnchorStyled href="#">About</AnchorStyled>
             </li>
@@ -60,8 +60,8 @@ export function Navbar() {
             <li>
               <AnchorStyled href="#">Visit</AnchorStyled>
             </li>
-          </NavigationOptionsStyled>
-        </NavigationOptionsContainer>
+          </UnorderedListStyled>
+        </UnorderedListContainer>
       </div>
     </nav>
   )
