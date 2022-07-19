@@ -15,6 +15,25 @@ export const AnchorStyled = tw.a`
   md:hover:bg-transparent
 `
 
+export const NavigationOptionsContainer = tw.div`
+  hidden
+  w-full
+  md:block
+  md:w-auto
+`
+
+export const NavigationOptionsStyled = tw.ul`
+  mt-4
+  flex
+  flex-col
+  items-center
+  md:mt-0
+  md:flex-row
+  md:space-x-8
+  md:text-sm
+  md:font-medium
+`
+
 export const Button = tw.button`
   bg-electric-green
   inline-flex
@@ -78,31 +97,29 @@ export const TableFooterHeadingStyled = tw.th`
   ${(p: { $isMobile: boolean }) =>
     p.$isMobile
       ? `
-      pl-4
-      pr-3
+      ps-4
+      pe-3
       pt-4
-      text-left
+      text-start
       font-normal
       text-gray-500
       sm:hidden`
       : `
       hidden
-      pl-6
-      pr-3
+      ps-6
+      pe-3
       pt-4
-      text-right
+      text-end
       font-normal
       text-gray-500
-      sm:table-cell md:pl-0
+      sm:table-cell md:ps-0
     `}
 `
 
 export const TableFooterCellStyled = tw.td`
-  pl-3 pr-4 pt-4 sm:pr-6 md:pr-0
+  ps-3 pe-4 pt-4 sm:pe-6 md:pe-0
   ${(p: { $isStrong: boolean }) =>
-    p.$isStrong
-      ? `text-right text-sm font-semibold text-gray-900`
-      : `text-right text-sm text-gray-500`}
+    p.$isStrong ? `text-end text-sm font-semibold text-gray-900` : `text-end text-sm text-gray-500`}
 `
 
 export const UnorderedListContainer = tw.div`
@@ -113,12 +130,13 @@ export const UnorderedListContainer = tw.div`
 `
 
 export const UnorderedListStyled = tw.ul`
+  gap-8
   mt-4
   flex
   flex-col
+  items-center
   md:mt-0
   md:flex-row
-  md:space-x-8
   md:text-sm
   md:font-medium
 `

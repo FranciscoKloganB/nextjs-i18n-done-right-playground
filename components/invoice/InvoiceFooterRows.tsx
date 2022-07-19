@@ -1,5 +1,6 @@
 import React from "react"
-import tw from "tailwind-styled-components"
+import { useTranslation } from "react-i18next"
+import { COMMON } from "~/constants/translations"
 import { TableFooterCellStyled, TableFooterHeadingStyled } from "../styled"
 
 function FooterRow({ title, cellData }: { title: string; cellData: string }) {
@@ -16,33 +17,35 @@ function FooterRow({ title, cellData }: { title: string; cellData: string }) {
   )
 }
 
-function TotalRow() {
+function TotalRow({ title, cellData }: { title: string; cellData: string }) {
   return (
     <tr>
       <th
         scope="row"
         colSpan={3}
-        className="hidden pl-6 pr-3 pt-4 text-right text-sm font-semibold text-gray-900 sm:table-cell md:pl-0"
+        className="hidden pt-4 text-end text-sm font-semibold text-gray-900 pe-3 ps-6 sm:table-cell md:ps-0"
       >
-        Total
+        {title}
       </th>
       <th
         scope="row"
-        className="pl-4 pr-3 pt-4 text-left text-sm font-semibold text-gray-900 sm:hidden"
+        className="pt-4 text-start text-sm font-semibold text-gray-900 pe-3 ps-4 sm:hidden"
       >
-        Total
+        {title}
       </th>
-      <TableFooterCellStyled $isStrong>$4,485.00</TableFooterCellStyled>
+      <TableFooterCellStyled $isStrong>{cellData}</TableFooterCellStyled>
     </tr>
   )
 }
 
 export function InvoiceFooterRows() {
+  const { t } = useTranslation(COMMON)
+
   return (
     <>
-      <FooterRow title={"Subtotal"} cellData={"$3.900.00"} />
-      <FooterRow title={"Tax"} cellData={"$585.00"} />
-      <TotalRow />
+      <FooterRow title={t("subtotal")} cellData="$3.900.00" />
+      <FooterRow title={t("tax")} cellData="$585.00" />
+      <TotalRow title={t("total")} cellData="$4,485.00" />
     </>
   )
 }
