@@ -76,6 +76,54 @@ export const NavbarStyled = tw.nav`
   sm:px-4
 `
 
+export const TableContainer = tw.div`
+  w-full
+  -mx-4
+  mt-8
+  flex
+  flex-col
+  sm:-mx-6
+  md:mx-0
+`
+
+export const TableStyled = tw.table`
+  min-w-full
+  divide-y
+  divide-gray-300
+`
+
+export const TableFooterHeadingStyled = tw.th`
+  text-sm
+  ${(p: { $isMobile: boolean }) =>
+    p.$isMobile
+      ? `
+      pl-4
+      pr-3
+      pt-4
+      text-left
+      font-normal
+      text-gray-500
+      sm:hidden`
+      : `
+      hidden
+      pl-6
+      pr-3
+      pt-4
+      text-right
+      font-normal
+      text-gray-500
+      sm:table-cell md:pl-0
+    `}
+`
+
+export const TableFooterCellStyled = tw.td`
+  pl-3 pr-4 pt-4 sm:pr-6 md:pr-0
+  ${(p: { $isStrong: boolean }) =>
+    p.$isStrong
+      ? `text-right text-sm font-semibold text-gray-900`
+      : `text-right text-sm text-gray-500`}
+`
+
 export const UnorderedListContainer = tw.div`
   hidden
   w-full
