@@ -15,8 +15,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        electric: "#db00ff",
-        ribbon: "#0047ff"
+        "black-olive": "#292319",
+        "electric-green": "#0CEE77",
+        "light-teal": "#66DDAA"
       }
     }
   }
