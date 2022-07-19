@@ -5,4 +5,4 @@ export * from "./layout/Footer"
 
 export * from "./invoice/InvoiceSummary"
 
-export * from "./project/ProjectRow"
+export * from "./invoice/InvoiceProjectRow"

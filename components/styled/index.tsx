@@ -73,9 +73,36 @@ export const TableStyled = tw.table`
   divide-gray-300
 `
 
-export const TableRow = tw.tr`
-  border-b
-  border-gray-200
+export const TableFooterHeadingStyled = tw.th`
+  text-sm
+  ${(p: { $isMobile: boolean }) =>
+    p.$isMobile
+      ? `
+      pl-4
+      pr-3
+      pt-4
+      text-left
+      font-normal
+      text-gray-500
+      sm:hidden`
+      : `
+      hidden
+      pl-6
+      pr-3
+      pt-4
+      text-right
+      font-normal
+      text-gray-500
+      sm:table-cell md:pl-0
+    `}
+`
+
+export const TableFooterCellStyled = tw.td`
+  pl-3 pr-4 pt-4 sm:pr-6 md:pr-0
+  ${(p: { $isStrong: boolean }) =>
+    p.$isStrong
+      ? `text-right text-sm font-semibold text-gray-900`
+      : `text-right text-sm text-gray-500`}
 `
 
 export const UnorderedListContainer = tw.div`
