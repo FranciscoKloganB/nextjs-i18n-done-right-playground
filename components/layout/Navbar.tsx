@@ -41,11 +41,11 @@ function LanguageSelectorDropdown() {
   }
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-start">
       <div>
         <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-electric-green focus:ring-offset-2 focus:ring-offset-gray-100">
           {humanReadableLanguage(i18n.language)}
-          <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+          <ChevronDownIcon className="h-5 w-5 ms-2 ltr:-mr-1 rtl:-ml-1" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -58,7 +58,7 @@ function LanguageSelectorDropdown() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 end-0 focus:outline-none">
           <div className="py-1">
             {supportedLanguages.map((language) => (
               <Menu.Item key={language}>
@@ -122,7 +122,6 @@ export function Navbar() {
 
         <UnorderedListContainer id="navbar-default">
           <UnorderedListStyled>
-            <LanguageSelectorDropdown />
             <li>
               <AnchorStyled href="#">{t("about")}</AnchorStyled>
             </li>
@@ -131,6 +130,9 @@ export function Navbar() {
             </li>
             <li>
               <AnchorStyled href="#">{t("visit")}</AnchorStyled>
+            </li>
+            <li>
+              <LanguageSelectorDropdown />
             </li>
           </UnorderedListStyled>
         </UnorderedListContainer>

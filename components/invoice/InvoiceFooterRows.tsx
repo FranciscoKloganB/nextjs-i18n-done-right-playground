@@ -23,13 +23,13 @@ function TotalRow({ title, cellData }: { title: string; cellData: string }) {
       <th
         scope="row"
         colSpan={3}
-        className="hidden pt-4 text-right text-sm font-semibold text-gray-900 pe-3 ps-6 sm:table-cell md:ps-0"
+        className="hidden pt-4 text-end text-sm font-semibold text-gray-900 pe-3 ps-6 sm:table-cell md:ps-0"
       >
         {title}
       </th>
       <th
         scope="row"
-        className="pt-4 text-left text-sm font-semibold text-gray-900 pe-3 ps-4 sm:hidden"
+        className="pt-4 text-start text-sm font-semibold text-gray-900 pe-3 ps-4 sm:hidden"
       >
         {title}
       </th>

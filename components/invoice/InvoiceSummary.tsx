@@ -25,7 +25,7 @@ export function InvoiceSummary() {
             <time dateTime="2022-08-31">{toHumanReadableString("2022-08-01", i18n.language)}</time>.
           </p>
         </div>
-        <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
+        <div className="mt-4 sm:mt-0 sm:flex-none sm:ms-16">
           <Button type="button">{t("print")}</Button>
         </div>
       </div>

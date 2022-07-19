@@ -12,7 +12,7 @@ type ProjectRowProps = {
   project: Project
 }
 
-const text = "text-right text-sm text-gray-500"
+const text = "text-end text-sm text-gray-500"
 const cellPrice = clsx("py-4 ps-3 pe-4 sm:pe-6 md:pe-0", text)
 const cellHiddenMobile = clsx("hidden py-4 px-3 sm:table-cell", text)
 
