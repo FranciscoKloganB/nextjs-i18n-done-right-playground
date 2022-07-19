@@ -1,6 +1,9 @@
-import { AnchorStyled, NavigationOptionsStyled, NavigationOptionsContainer } from "~/components"
+import { useTranslation } from "react-i18next"
 import Link from "next/link"
 import Image from "next/image"
+
+import { AnchorStyled, NavigationOptionsStyled, NavigationOptionsContainer } from "~/components"
+import { COMMON } from "~/constants/translations"
 
 function LogoContainer({ children: child }: { children: React.ReactNode }) {
   return (
@@ -15,6 +18,8 @@ function LogoContainer({ children: child }: { children: React.ReactNode }) {
 }
 
 export function Navbar() {
+  const { t } = useTranslation()
+
   return (
     <nav className="w-full rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between">
@@ -52,13 +57,13 @@ export function Navbar() {
         <NavigationOptionsContainer id="navbar-default">
           <NavigationOptionsStyled>
             <li>
-              <AnchorStyled href="#">About</AnchorStyled>
+              <AnchorStyled href="#">{t("about")}</AnchorStyled>
             </li>
             <li>
-              <AnchorStyled href="#">Contact</AnchorStyled>
+              <AnchorStyled href="#">{t("contact")}</AnchorStyled>
             </li>
             <li>
-              <AnchorStyled href="#">Visit</AnchorStyled>
+              <AnchorStyled href="#">{t("visit")}</AnchorStyled>
             </li>
           </NavigationOptionsStyled>
         </NavigationOptionsContainer>
