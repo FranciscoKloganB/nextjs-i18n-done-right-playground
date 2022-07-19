@@ -1,5 +1,4 @@
-import tw from "tailwind-styled-components"
-
+import { AnchorStyled, NavigationOptionsStyled, NavigationOptionsContainer } from "~/components"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -14,27 +13,6 @@ function LogoContainer({ children: child }: { children: React.ReactNode }) {
     </div>
   )
 }
-
-const AnchorStyled = tw.a`
-  block
-  border-b
-  border-gray-100
-  py-2
-  pe-4
-  ps-3
-  text-gray-700
-  hover:bg-gray-50
-  dark:border-gray-700
-  dark:text-gray-400
-  dark:hover:bg-gray-700
-  dark:hover:text-white
-  md:border-0
-  md:p-0
-  md:hover:bg-transparent
-  md:hover:text-blue-700
-  md:dark:hover:bg-transparent
-  md:dark:hover:text-white
-`
 
 export function TheNavbar() {
   return (
@@ -71,8 +49,8 @@ export function TheNavbar() {
             ></path>
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8 md:text-sm md:font-medium">
+        <NavigationOptionsContainer id="navbar-default">
+          <NavigationOptionsStyled>
             <li>
               <AnchorStyled href="#">About</AnchorStyled>
             </li>
@@ -82,8 +60,8 @@ export function TheNavbar() {
             <li>
               <AnchorStyled href="#">Visit</AnchorStyled>
             </li>
-          </ul>
-        </div>
+          </NavigationOptionsStyled>
+        </NavigationOptionsContainer>
       </div>
     </nav>
   )
