@@ -97,8 +97,8 @@ export const TableFooterHeadingStyled = tw.th`
   ${(p: { $isMobile: boolean }) =>
     p.$isMobile
       ? `
-      pl-4
-      pr-3
+      ps-4
+      pe-3
       pt-4
       text-left
       font-normal
@@ -106,18 +106,18 @@ export const TableFooterHeadingStyled = tw.th`
       sm:hidden`
       : `
       hidden
-      pl-6
-      pr-3
+      ps-6
+      pe-3
       pt-4
       text-right
       font-normal
       text-gray-500
-      sm:table-cell md:pl-0
+      sm:table-cell md:ps-0
     `}
 `
 
 export const TableFooterCellStyled = tw.td`
-  pl-3 pr-4 pt-4 sm:pr-6 md:pr-0
+  ps-3 pe-4 pt-4 sm:pe-6 md:pe-0
   ${(p: { $isStrong: boolean }) =>
     p.$isStrong
       ? `text-right text-sm font-semibold text-gray-900`

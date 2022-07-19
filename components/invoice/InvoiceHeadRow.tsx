@@ -10,7 +10,7 @@ export function InvoiceHeadRow() {
 
   return (
     <tr>
-      <th scope="col" className="py-3.5 pl-4 pr-3 text-left sm:pl-6 md:pl-0">
+      <th scope="col" className="py-3.5 text-left pe-3 ps-4 sm:ps-6 md:ps-0">
         {t("project")}
       </th>
       <th scope="col" className={colHiddenMobile}>
@@ -19,7 +19,7 @@ export function InvoiceHeadRow() {
       <th scope="col" className={colHiddenMobile}>
         {t("rate")}
       </th>
-      <th scope="col" className="py-3.5 pl-3 pr-4 text-right sm:pr-6 md:pr-0">
+      <th scope="col" className="py-3.5 text-right ps-3 pe-4 sm:pe-6 md:pe-0">
         {t("price")}
       </th>
     </tr>
