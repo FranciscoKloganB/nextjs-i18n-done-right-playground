@@ -1,4 +1,5 @@
 import tw from "twin.macro"
+import TheNavbar from "~/components/layout/TheNavbar"
 import { Button, Logo } from "../components"
 
 const styles = {
@@ -11,6 +12,7 @@ const styles = {
 
 const App = () => (
   <div css={styles.container({ hasBackground: true })}>
+    <TheNavbar />
     <div tw="flex flex-col justify-center h-full gap-y-5">
       <Button variant="primary">Submit</Button>
       <Button variant="secondary">Cancel</Button>
