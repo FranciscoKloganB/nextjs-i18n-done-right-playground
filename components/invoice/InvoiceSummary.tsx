@@ -11,7 +11,7 @@ const projects = [
 ]
 
 export function InvoiceSummary() {
-  const { t } = useTranslation(COMMON)
+  const { t, i18n } = useTranslation(COMMON)
 
   return (
     <div className="px-4 sm:px-6 lg:px-8">
@@ -20,9 +20,9 @@ export function InvoiceSummary() {
           <h1 className="text-xl font-semibold text-gray-900">{t("invoice")}</h1>
           <p className="mt-2 text-sm text-gray-700">
             {t("workCompleteFrom")}{" "}
-            <time dateTime="2022-08-01">{toHumanReadableString("2022-08-01", "en")}</time>{" "}
+            <time dateTime="2022-08-01">{toHumanReadableString("2022-08-01", i18n.language)}</time>{" "}
             {`${t("to")} `}
-            <time dateTime="2022-08-31">{toHumanReadableString("2022-08-01", "en")}</time>.
+            <time dateTime="2022-08-31">{toHumanReadableString("2022-08-01", i18n.language)}</time>.
           </p>
         </div>
         <div className="mt-4 sm:mt-0 sm:ml-16 sm:flex-none">
