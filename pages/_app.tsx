@@ -1,8 +1,18 @@
 import "~/styles/globals.css"
 import "../i18n.config"
 
-import type { AppProps } from "next/app"
+import { Navbar, Footer } from "~/components"
 
-const App = ({ Component, pageProps }: AppProps) => <Component {...pageProps} />
-
-export default App
+export default function App({ Component, pageProps }: NextAppPropsWithLayout) {
+  return (
+    <>
+      <Navbar />
+      <main className="flex w-screen justify-center">
+        <div className="w-4/5 py-12">
+          <Component {...pageProps} />
+        </div>
+      </main>
+      <Footer />
+    </>
+  )
+}

@@ -2,12 +2,20 @@ import { useTranslation } from "react-i18next"
 import { Fragment } from "react"
 import { Menu, Transition } from "@headlessui/react"
 import { ChevronDownIcon } from "@heroicons/react/solid"
+
 import Link from "next/link"
 import Image from "next/image"
 
-import { AnchorStyled, NavigationOptionsStyled, NavigationOptionsContainer } from "~/components"
+import {
+  AnchorStyled,
+  UnorderedListStyled,
+  UnorderedListContainer,
+  NavbarStyled
+} from "~/components"
+
 import { COMMON } from "~/constants/translations"
 import clsx from "clsx"
+import { humanReadableLanguage } from "~/constants/languages"
 
 function LogoContainer({ children: child }: { children: React.ReactNode }) {
   return (
@@ -22,11 +30,12 @@ function LogoContainer({ children: child }: { children: React.ReactNode }) {
 }
 
 function LanguageSelectorDropdown() {
+  const { i18n } = useTranslation()
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
-          Languages
+        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-electric-green focus:ring-offset-2 focus:ring-offset-gray-100">
+          {humanReadableLanguage(i18n.language)}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -77,7 +86,7 @@ export function Navbar() {
   const { t } = useTranslation(COMMON)
 
   return (
-    <nav className="w-full rounded border-gray-200 bg-white px-2 py-2.5 dark:bg-gray-900 sm:px-4">
+    <NavbarStyled>
       <div className="container mx-auto flex flex-wrap items-center justify-between">
         <LogoContainer>
           <Image
@@ -110,8 +119,9 @@ export function Navbar() {
             ></path>
           </svg>
         </button>
-        <NavigationOptionsContainer id="navbar-default">
-          <NavigationOptionsStyled>
+
+        <UnorderedListContainer id="navbar-default">
+          <UnorderedListStyled>
             <LanguageSelectorDropdown />
             <li>
               <AnchorStyled href="#">{t("about")}</AnchorStyled>
@@ -122,9 +132,9 @@ export function Navbar() {
             <li>
               <AnchorStyled href="#">{t("visit")}</AnchorStyled>
             </li>
-          </NavigationOptionsStyled>
-        </NavigationOptionsContainer>
+          </UnorderedListStyled>
+        </UnorderedListContainer>
       </div>
-    </nav>
+    </NavbarStyled>
   )
 }
