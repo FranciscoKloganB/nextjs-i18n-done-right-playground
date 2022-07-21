@@ -123,13 +123,13 @@ export function Navbar() {
         <UnorderedListContainer id="navbar-default">
           <UnorderedListStyled>
             <li>
-              <AnchorStyled href="#">{t("about")}</AnchorStyled>
+              <AnchorStyled href="https://go.wtx.com/about-us">{t("about")}</AnchorStyled>
             </li>
             <li>
-              <AnchorStyled href="#">{t("contact")}</AnchorStyled>
+              <AnchorStyled href="https://go.wtx.com/career">{t("careers")}</AnchorStyled>
             </li>
             <li>
-              <AnchorStyled href="#">{t("visit")}</AnchorStyled>
+              <AnchorStyled href="https://wtx.com">{t("visit")}</AnchorStyled>
             </li>
             <li>
               <LanguageSelectorDropdown />
